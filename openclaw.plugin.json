@@ -1,0 +1,156 @@
+{
+  "id": "yandex",
+  "providerAuthEnvVars": {
+    "yandex": [
+      "YANDEX_SEARCH_API_KEY",
+      "YC_API_KEY",
+      "YANDEX_IAM_TOKEN",
+      "YC_IAM_TOKEN"
+    ]
+  },
+  "uiHints": {
+    "webSearch.apiKey": {
+      "label": "Yandex Search API Key",
+      "help": "Yandex Search API key. Fallback env vars: YANDEX_SEARCH_API_KEY or YC_API_KEY.",
+      "sensitive": true,
+      "placeholder": "AQVN..."
+    },
+    "webSearch.iamToken": {
+      "label": "Yandex IAM Token",
+      "help": "Optional IAM token instead of API key. Fallback env vars: YANDEX_IAM_TOKEN or YC_IAM_TOKEN.",
+      "sensitive": true,
+      "placeholder": "y0_AgAA..."
+    },
+    "webSearch.authMode": {
+      "label": "Auth Mode",
+      "help": "auto picks iamToken first, then apiKey. You can force api-key or iam."
+    },
+    "webSearch.folderId": {
+      "label": "Yandex Folder ID",
+      "help": "Folder ID used by Search API requests. Can also come from YANDEX_FOLDER_ID or YC_FOLDER_ID."
+    },
+    "webSearch.searchType": {
+      "label": "Search Type",
+      "help": "SEARCH_TYPE_COM, SEARCH_TYPE_RU, SEARCH_TYPE_TR, or SEARCH_TYPE_KK."
+    },
+    "webSearch.region": {
+      "label": "Default Region",
+      "help": "Optional Yandex region id for ranking bias."
+    },
+    "webSearch.l10n": {
+      "label": "L10N",
+      "help": "Optional Yandex localization value passed as l10n."
+    },
+    "webSearch.familyMode": {
+      "label": "Family Mode",
+      "help": "FAMILY_MODE_NONE, FAMILY_MODE_MODERATE, or FAMILY_MODE_STRICT."
+    },
+    "webSearch.fixTypoMode": {
+      "label": "Fix Typo Mode",
+      "help": "FIX_TYPO_MODE_ON or FIX_TYPO_MODE_OFF."
+    },
+    "webSearch.maxPassages": {
+      "label": "Max Passages",
+      "help": "How many Yandex passages to ask for before compacting snippets."
+    },
+    "webSearch.userAgent": {
+      "label": "User Agent",
+      "help": "Optional custom userAgent sent to Yandex."
+    },
+    "webSearch.baseUrl": {
+      "label": "Base URL",
+      "help": "Optional override for the Yandex Search endpoint."
+    }
+  },
+  "contracts": {
+    "webSearchProviders": [
+      "yandex"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "webSearch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKey": {
+            "type": [
+              "string",
+              "object"
+            ]
+          },
+          "iamToken": {
+            "type": [
+              "string",
+              "object"
+            ]
+          },
+          "authMode": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "api-key",
+              "api_key",
+              "iam"
+            ]
+          },
+          "folderId": {
+            "type": [
+              "string",
+              "object"
+            ]
+          },
+          "searchType": {
+            "type": "string",
+            "enum": [
+              "SEARCH_TYPE_COM",
+              "SEARCH_TYPE_RU",
+              "SEARCH_TYPE_TR",
+              "SEARCH_TYPE_KK"
+            ]
+          },
+          "region": {
+            "type": "string"
+          },
+          "l10n": {
+            "type": "string"
+          },
+          "familyMode": {
+            "type": "string",
+            "enum": [
+              "FAMILY_MODE_NONE",
+              "FAMILY_MODE_MODERATE",
+              "FAMILY_MODE_STRICT",
+              "none",
+              "moderate",
+              "strict"
+            ]
+          },
+          "fixTypoMode": {
+            "type": "string",
+            "enum": [
+              "FIX_TYPO_MODE_ON",
+              "FIX_TYPO_MODE_OFF",
+              "on",
+              "off"
+            ]
+          },
+          "maxPassages": {
+            "type": "number"
+          },
+          "userAgent": {
+            "type": "string"
+          },
+          "baseUrl": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "name": "Yandex Search",
+  "description": "Compact Yandex Search API provider for OpenClaw web search",
+  "version": "0.1.0"
+}

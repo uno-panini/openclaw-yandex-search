@@ -1,0 +1,39 @@
+{
+  "name": "openclaw-yandex-search",
+  "version": "0.1.0",
+  "description": "Compact Yandex Search provider plugin for OpenClaw",
+  "type": "module",
+  "main": "./index.js",
+  "license": "MIT-0",
+  "engines": {
+    "node": ">=22.14"
+  },
+  "files": [
+    "index.js",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE",
+    "examples/openclaw.config.example.json",
+    "examples/openclaw.config.iam.example.json"
+  ],
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "yandex",
+    "search",
+    "web-search"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.3.24-beta.2",
+      "minGatewayVersion": "2026.3.24-beta.2"
+    },
+    "build": {
+      "openclawVersion": "2026.3.24-beta.2",
+      "pluginSdkVersion": "2026.3.24-beta.2"
+    }
+  }
+}

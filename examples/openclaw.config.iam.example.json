@@ -1,0 +1,28 @@
+{
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "yandex"
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "yandex": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "iamToken": "y0_AgAA...",
+            "authMode": "iam",
+            "folderId": "b1gxxxxxxxxxxxxx",
+            "searchType": "SEARCH_TYPE_COM",
+            "familyMode": "FAMILY_MODE_MODERATE",
+            "fixTypoMode": "FIX_TYPO_MODE_ON",
+            "maxPassages": 2
+          }
+        }
+      }
+    }
+  }
+}
