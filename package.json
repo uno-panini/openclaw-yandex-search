@@ -23,6 +23,14 @@
     "search",
     "web-search"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uno-panini/openclaw-yandex-search.git"
+  },
+  "homepage": "https://github.com/uno-panini/openclaw-yandex-search#readme",
+  "bugs": {
+    "url": "https://github.com/uno-panini/openclaw-yandex-search/issues"
+  },
   "openclaw": {
     "extensions": [
       "./index.js"
